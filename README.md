@@ -1,20 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Flowclass Technical Test for Software Engineer
 
-## Getting Started
+![Author](https://img.shields.io/badge/Author-%20Chan%20Sik%20Lam%20Jerry-red)
+![Version](https://img.shields.io/badge/Version-0.0.1-orange)
+![Date](https://img.shields.io/badge/Date-4--6--2023-yellow)
+![Copyright](https://img.shields.io/badge/Copyright-N.A.-green)
+![Progress](https://img.shields.io/badge/Progress-Complete-blue)
 
-First, run the development server:
+## Result Demonstraion
+![Demo](./src/app/asset/demo.gif)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Features and Requirements
+- a text search bar (search by name)
+- search text highlighted (case-sensitive according to the video attached)
+- click on the name will show the detailed info of that person
+- Use React, React Hooks, CSS/SCSS, etc.
+- Using UI library is not allowed but beautiful UI
+
+## Context API Demonstration
+
+Usage:
+   
+- In `src/page.js`, I created a context for the data and passed it to the `PeopleList` component.
+
+Motivation: 
+   
+- Passing props to children is sometimes verbose, so we can use context API to pass data to children without passing props to every level of the component tree.
+
+Code:
+```
+<main style={{ padding: "100px" }}>
+    <PersonContext.Provider value={data}>
+        <PeopleList people={data} />
+    </PersonContext.Provider>
+</main>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Getting Started with a develpment server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. 
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+I started editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
