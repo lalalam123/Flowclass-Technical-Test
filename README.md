@@ -18,22 +18,38 @@
 
 ## Context API Demonstration
 
-Usage:
-   
-- In `src/page.js`, I created a context for the data and passed it to the `PeopleList` component.
-
 Motivation: 
    
-- Passing props to children is sometimes verbose, so we can use context API to pass data to children without passing props to every level of the component tree.
+- Passing props to children is sometimes verbose when the component tree is huge, so we can use context API to pass data to children without passing props to every level of the component tree.
 
 Code:
+
+`src/page.js`, we can create a context and export it
+
+```javascript
+export const PersonContext = createContext(data);
 ```
-<main style={{ padding: "100px" }}>
-    <PersonContext.Provider value={data}>
-        <PeopleList people={data} />
-    </PersonContext.Provider>
-</main>
+
+`src/peoplelist.jsx`, we can import the context and use it
+
+```javascript
+import { PersonContext } from "../page";
+
+function PeopleList() {
+
+    const people = useContext(PersonContext)
+
+    const filteredPeople = people.filter((person) =>
+        ...
+    );
+
+    ...
+
+}
+
 ```
+
+Reference: [React Context API](https://reactjs.org/docs/context.html)
 
 ## Getting Started with a develpment server
 ```bash

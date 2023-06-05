@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Person from "./person";
+import { PersonContext } from "../page";
 
 function DetailInfo({ people }) {
     if (people) {
@@ -14,8 +15,10 @@ function DetailInfo({ people }) {
     return null
 }
 
-function PeopleList({ people }) {
+function PeopleList() {
     const [searchTerm, setSearchTerm] = useState("");
+
+    const people = useContext(PersonContext)
 
     const filteredPeople = people.filter((person) =>
         person.name.includes(searchTerm) // Use toLowerCase() to make it case insensitive

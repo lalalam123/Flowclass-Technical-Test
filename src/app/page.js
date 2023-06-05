@@ -6,15 +6,13 @@ import data from './components/data'
 
 import React, { createContext } from "react";
 
-export default function Home() {
+export const PersonContext = createContext(data);
 
-  const PersonContext = createContext(null);
+export default function Home() {
 
   return (
     <main style={{ padding: "100px" }}>
-      <PersonContext.Provider value={data}>
-        <PeopleList people={data} />
-      </PersonContext.Provider>
+      <PeopleList />
     </main>
   )
 }

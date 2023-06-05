@@ -2,7 +2,7 @@ import React from "react";
 
 function Person({ name, searchTerm, onClick }) {
 
-    const nameParts = name.split(new RegExp(`(${searchTerm})`));
+    const nameParts = name.split(new RegExp(`(${searchTerm})`)); // Optional: Add 'i' flag to make it case insensitive
 
     return (
         <div>
